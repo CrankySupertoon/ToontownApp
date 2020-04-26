@@ -7,10 +7,6 @@ package toontownapp;
 
 import java.util.Scanner;
 
-/**
- *
- * @author James
- */
 public class ToontownApp {
   
   public void menu(){
@@ -19,15 +15,14 @@ public class ToontownApp {
     
     System.out.println("Select a Cog Suit\n");
     System.out.println("1 - Bossbot");
-    System.out.println("1 - Bossbot");
-    System.out.println("1 - Bossbot");
-    System.out.println("1 - Bossbot");
+    System.out.println("2 - Lawbot");
+    System.out.println("3 - Cashbot");
+    System.out.println("4 - Sellbot");
     Scanner in = new Scanner(System.in);
     int choice = in.nextInt();
     
   }
 
-      /*
     Scanner in = new Scanner(System.in);
     int choice1, choice2;
   
@@ -87,7 +82,6 @@ public class ToontownApp {
       System.out.println("7 -- The Mingler");
       System.out.println("8 -- Mr. Hollywood");
     }
-    */
 
   public static void main(String[] args) {
     ToontownApp app = new ToontownApp();

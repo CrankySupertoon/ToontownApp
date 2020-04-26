@@ -37,4 +37,5 @@ public class Cog {
     return coglevel;
   }
 
+
 }
