@@ -1,4 +1,4 @@
-package toontownapp.coghqs;
+package toontownapp.cogfacilities;
 
 public class LawbotDAOffices{
 
