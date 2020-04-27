@@ -12,18 +12,38 @@ public class ToontownApp {
   public void menu(){
     
     //Cog cog = new Cog();
-    
-    System.out.println("Select a Cog Suit\n");
-    System.out.println("1 - Bossbot");
-    System.out.println("2 - Lawbot");
-    System.out.println("3 - Cashbot");
-    System.out.println("4 - Sellbot");
-    Scanner in = new Scanner(System.in);
-    int choice = in.nextInt();
-    
+    int on = 1;
+
+    while( on == 1) {
+      System.out.println("Select a Cog Suit\n");
+      System.out.println("1 - Bossbot");
+      System.out.println("2 - Lawbot");
+      System.out.println("3 - Cashbot");
+      System.out.println("4 - Sellbot");
+      System.out.println("5 - Exit");
+      Scanner in = new Scanner(System.in);
+      int choice = in.nextInt();
+
+      switch (choice) {
+        case 1:
+          Bossbot();
+          break;
+        case 2:
+          Lawbot();
+          break;
+        case 3:
+          Cashbot();
+          break;
+        case 4:
+          Sellbot();
+          break;
+        default:
+          on = 0; break;
+      }
+    }
   }
 
-    Scanner in = new Scanner(System.in);
+  Scanner in = new Scanner(System.in);
     int choice1, choice2;
   
     public void Bossbot(){
@@ -41,9 +61,8 @@ public class ToontownApp {
       System.out.println("What level are you?");
       choice2 = in.nextInt();
       
-      switch(choice1){
-        case 1: 
-      }
+      //BUILD COG WITH BUILDER HERE
+      //SEND COG COGFACILITY
       
     }
     
@@ -57,6 +76,12 @@ public class ToontownApp {
       System.out.println("6 -- Spin Doctor");
       System.out.println("7 -- Legal Eagle");
       System.out.println("8 -- Big Wig");
+
+      System.out.println("What level are you?");
+      choice2 = in.nextInt();
+
+      //BUILD COG WITH BUILDER HERE
+      //SEND COG COGFACILITY
     }
     
     public void Cashbot(){
@@ -69,6 +94,12 @@ public class ToontownApp {
       System.out.println("6 -- Money Bags");
       System.out.println("7 -- Loan Shark");
       System.out.println("8 -- Robber Baron");
+
+      System.out.println("What level are you?");
+      choice2 = in.nextInt();
+
+      //BUILD COG WITH BUILDER HERE
+      //SEND COG COGFACILITY
     }
     
     public void Sellbot(){
@@ -81,6 +112,12 @@ public class ToontownApp {
       System.out.println("6 -- Two-Face");
       System.out.println("7 -- The Mingler");
       System.out.println("8 -- Mr. Hollywood");
+
+      System.out.println("What level are you?");
+      choice2 = in.nextInt();
+
+      //BUILD COG WITH BUILDER HERE
+      //SEND COG COGFACILITY
     }
 
   public static void main(String[] args) {

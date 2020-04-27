@@ -4,6 +4,7 @@ import toontownapp.cogbuilder.*;
 public class BossbotSuit {
 
     public int getStockOptionsNeeded(Cog cog){
+
         switch(cog.getCogname()){
             case FLUNKY:
                 return flunky(cog.getCoglevel());
