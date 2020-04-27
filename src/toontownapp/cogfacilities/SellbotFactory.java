@@ -19,16 +19,18 @@ public class SellbotFactory extends CogFacility{
             int total = sb.getMeritsNeeded(cog);
 
             //CALCULATE LONGS NEEDED
-            if (total >= 776) {
+            if(total >= 776){
                 x = total / 776; //longs needed
                 total = total % 776; //extra merits
             }
 
             //CALCULATE SHORTS NEEDED
-            y = total / 480; //shorts needed
-            total = total % 480; //extra merits
-            if (480 >= total && total > 0)//extra merits -> add another short
-                y++;
+            if(total < 776){
+                y = total / 480; //shorts needed
+                total = total % 480; //extra merits
+                if(480 >= total && total > 0)//extra merits -> add another short
+                    y++;
+            }
 
             factories.add(x); //number of longs added
             factories.add(y); //number of shorts added

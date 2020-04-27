@@ -10,36 +10,89 @@ public class CashbotMint extends CogFacility{
 
     protected CogType facilityType = CogType.CASHBOT;
 
+    int x = 0, y = 0, z = 0; //temporary variables
+    int a = 0, b = 0, c = 0;
+
+    void cashbotsLow(int total){
+
+        //CALCULATE MINIMUM BULLS NEEDED
+        if (total >= 1202) {
+            a = total / 1202; //bullions needed
+            total = total % 1202; //extra cogbucks
+        }
+        if(1202 > total && total > 679){
+            a++;
+            total = total % 1202;
+        }
+
+        //CALCULATE MINIMUM DOLLARS NEEDED
+        if(total >= 679){
+            b = total / 679; //dollars needed
+            total = total % 679; //extra cogbucks
+        }
+        if(679 > total && total > 356){
+            b++;
+            total = total % 679;
+        }
+
+        //CALCULATE MINIMUM COINS NEEDED
+        if(total <= 356){
+            c = total / 356; //shorts needed
+            total = total % 356; //extra merits
+            if(356 >= total && total > 0)//extra merits -> add another short
+                c++;
+        }
+    }
+
+    void cashbotsHigh(int total){
+
+        //CALCULATE MAXIMUM BULLS NEEDED
+        if (total >= 1496) {
+            x = total / 1496; //bullions needed
+            total = total % 1496; //extra cogbucks
+        }
+        if(1496 > total && total > 1004){
+            x++;
+            total = total % 1496;
+        }
+
+        //CALCULATE MAXIMUM DOLLARS NEEDED
+        if(total >= 1004){
+            y = total / 1004; //dollars needed
+            total = total % 1004; //extra cogbucks
+        }
+        if(1004 > total && total > 554){
+            y++;
+            total = total % 1004;
+        }
+
+        //CALCULATE MAXIMUM COINS NEEDED
+        if(total >= 554){
+            z = total / 554; //shorts needed
+            total = total % 554; //extra merits
+            if(554 >= total && total > 0)//extra merits -> add another short
+                z++;
+        }
+    }//...
+
     public ArrayList<Integer> returnStats(Cog cog) {
 
         ArrayList<Integer> mints = new ArrayList<Integer>();
-        int x = 0, y = 0, z = 0; //temporary variables
 
         CashbotSuit cb = new CashbotSuit();
         int total = cb.getCogbucksNeeded(cog);
 
-        //CALCULATE BULLS NEEDED
-        if (total >= 1202) {
-            x = total / 1202; //bullions needed
-            total = total % 1202; //extra cogbucks
-        }
+        cashbotsLow(total);
+        cashbotsHigh(total);
 
-        //CALCULATE DOLLARS NEEDED
-        if(total >= 679){
-            y = total / 679; //dollars needed
-            total = total % 679; //extra cogbucks
-        }
-
-        //CALCULATE COINS NEEDED
-        z = total / 356; //shorts needed
-        total = total % 356; //extra merits
-        if (356 >= total && total > 0)//extra merits -> add another short
-            z++;
 
         //ADD TOTALS TO INTEGER ARRAY
-        mints.add(x); //number of bulls added
-        mints.add(y); //number of dollars added
-        mints.add(z); //number of coins added
+        mints.add(a); //number of min bulls added
+        mints.add(x); //number of max bulls added
+        mints.add(b); //number of min dollars
+        mints.add(y); //number of max dollars added
+        mints.add(c); //number of min coins added
+        mints.add(z); //number of max coins added
         return mints;
     }
 
