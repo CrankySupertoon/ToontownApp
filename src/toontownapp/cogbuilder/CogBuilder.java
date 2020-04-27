@@ -14,9 +14,9 @@ import toontownapp.cogbuilder.CogType;
  */
 public class CogBuilder {
   
-  private final CogType cogtype;
-  private CogName cogname;
-  private int coglevel;
+  protected final CogType cogtype;
+  protected CogName cogname;
+  protected int coglevel;
   
   public CogBuilder(CogType cogtype, CogName cogname){
     if(cogtype == null)

@@ -14,10 +14,10 @@ import toontownapp.cogbuilder.CogType;
 
 public class Cog {
   
-    private final CogType cogtype;
-    private final CogName cogname;
-    private final int coglevel;
-  
+    protected final CogType cogtype;
+    protected final CogName cogname;
+    protected final int coglevel;
+
     public Cog(CogBuilder builder){
       this.cogtype = builder.getCogType();
       this.cogname = builder.getCogName();

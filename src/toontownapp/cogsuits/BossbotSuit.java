@@ -1,111 +1,112 @@
-package toontownapp;
+package toontownapp.cogsuits;
+import toontownapp.cogbuilder.*;
 
-public class BossbotSuit{
+public class BossbotSuit {
 
     public int getStockOptionsNeeded(Cog cog){
-        switch(cog.cogname){
-            case "flunky":
-                return coldCaller(cog.coglevel);
-            break;
-            case "pencil pusher":
-                return pencilPusher(cog.coglevel);
-            break;
-            case "yesman":
-                return yesman(cog.coglevel);
-            break;
-            case "micromanager":
-                return beanCounter(cog.coglevel);
-            break;
-            case "downsizer":
-                return downsizer(cog.coglevel);
-            break;
-            case "head hunter":
-                return headHunter(cog.coglevel);
-            break;
-            case "corporate raider":
-                return corporateRaider(cog.coglevel);
-            break;
-            case "the big cheese":
-                return theBigCheese(cog.coglevel);
-            break;
-            default: System.out.println("Error: Invalid cog.cogname: "+cog.cogname); break;
+        switch(cog.getCogname()){
+            case FLUNKY:
+                return flunky(cog.getCoglevel());
+
+            case PENCIL_PUSHER:
+                return pencilPusher(cog.getCoglevel());
+
+            case YESMAN:
+                return yesman(cog.getCoglevel());
+
+            case MICROMANAGER:
+                return micromanager(cog.getCoglevel());
+
+            case DOWNSIZER:
+                return downsizer(cog.getCoglevel());
+
+            case HEADHUNTER:
+                return headHunter(cog.getCoglevel());
+
+            case CORPORATE_RAIDER:
+                return corporateRaider(cog.getCoglevel());
+
+            case THE_BIG_CHEESE:
+                return theBigCheese(cog.getCoglevel());
+
+            default: System.out.println("Error: Invalid cog.cogname: "+cog.getCogname()); return -1;
         }
     }
 
     public int flunky(int coglevel){
         switch(coglevel){
-            case 1: return 100; break;
-            case 2: return 130; break;
-            case 3: return 160; break;
-            case 4: return 190; break;
-            case 5: return 800; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 1: return 100;
+            case 2: return 130;
+            case 3: return 160;
+            case 4: return 190;
+            case 5: return 800;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int pencilPusher(int coglevel){
         switch(coglevel){
-            case 2: return 160; break;
-            case 3: return 210; break;
-            case 4: return 260; break;
-            case 5: return 310; break;
-            case 6: return 1300; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 2: return 160;
+            case 3: return 210;
+            case 4: return 260;
+            case 5: return 310;
+            case 6: return 1300;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int yesman(int coglevel){
         switch(coglevel){
-            case 3: return 260; break;
-            case 4: return 340; break;
-            case 5: return 420; break;
-            case 6: return 500; break;
-            case 7: return 2100; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 3: return 260;
+            case 4: return 340;
+            case 5: return 420;
+            case 6: return 500;
+            case 7: return 2100;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int micromanager(int coglevel){
         switch(coglevel){
-            case 4: return 420; break;
-            case 5: return 550; break;
-            case 6: return 680; break;
-            case 7: return 810; break;
-            case 8: return 3400; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 4: return 420;
+            case 5: return 550;
+            case 6: return 680;
+            case 7: return 810;
+            case 8: return 3400;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int downsizer(int coglevel){
         switch(coglevel){
-            case 5: return 680; break;
-            case 6: return 890; break;
-            case 7: return 1100; break;
-            case 8: return 1310; break;
-            case 9: return 5500; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 5: return 680;
+            case 6: return 890;
+            case 7: return 1100;
+            case 8: return 1310;
+            case 9: return 5500;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int headHunter(int coglevel){
         switch(coglevel){
-            case 6: return 1100; break;
-            case 7: return 400; break;
-            case 8: return 1780; break;
-            case 9: return 2120; break;
-            case 10: return 8900; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 6: return 1100;
+            case 7: return 400;
+            case 8: return 1780;
+            case 9: return 2120;
+            case 10: return 8900;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int corporateRaider(int coglevel){
         switch(coglevel){
-            case 7: return 1780; break;
-            case 8: return 2330; break;
-            case 9: return 2880; break;
-            case 10: return 3430; break;
-            case 11: return 14400; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 7: return 1780;
+            case 8: return 2330;
+            case 9: return 2880;
+            case 10: return 3430;
+            case 11: return 14400;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
@@ -117,52 +118,52 @@ public class BossbotSuit{
             case 20:
             case 30:
             case 40:
-                return 2880; break;
+                return 2880;
             case 9:
             case 16:
             case 21:
             case 31:
             case 41:
-                return 3770; break;
+                return 3770;
             case 10:
             case 17:
             case 22:
             case 32:
             case 42:
-                return 4660; break;
+                return 4660;
             case 11:
             case 18:
             case 23:
             case 33:
             case 43:
-                return 5500; break;
+                return 5500;
             case 24:
             case 34:
             case 44:
-                return 6440; break;
+                return 6440;
             case 25:
             case 35:
             case 45:
-                return 7330; break;
+                return 7330;
             case 26:
             case 36:
             case 46:
-                return 8220; break;
+                return 8220;
             case 27:
             case 37:
             case 47:
-                return 9110; break;
+                return 9110;
             case 28:
             case 38:
             case 48:
-                return 100000; break;
+                return 100000;
             case 12:
             case 19:
             case 29:
             case 39:
             case 49:
-                return 23300; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+                return 23300;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 

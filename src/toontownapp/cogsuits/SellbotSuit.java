@@ -1,122 +1,112 @@
-package toontownapp;
+package toontownapp.cogsuits;
+import toontownapp.cogbuilder.*;
 
 public class SellbotSuit{
 
     public int getMeritsNeeded(Cog cog){
-        switch(cog.cogname){
-            case "cold caller":
-                return coldCaller(cog.coglevel);
-            break;
-            case "telemarketer":
-                return telemarketer(cog.coglevel);
-            break;
-            case "name dropper":
-                return nameDropper(cog.coglevel);
-            break;
-            case "glad hander":
-                return gladHander(cog.coglevel);
-            break;
-            case "mover & shaker":
-                return moverAndShaker(cog.coglevel);
-            break;
-            case "two-face":
-                return twoface(cog.coglevel);
-            break;
-            case "the mingler":
-                return theMingler(cog.coglevel);
-            break;
-            case "mr. hollywood":
-                return mrHollywood(cog.coglevel);
-            break;
-            default: System.out.println("Error: Invalid cog.cogname: "+cog.cogname); break;
+        switch(cog.getCogname()){
+            case COLD_CALLER:
+                return coldCaller(cog.getCoglevel());
+
+            case TELEMARKETER:
+                return telemarketer(cog.getCoglevel());
+
+            case NAME_DROPPER:
+                return nameDropper(cog.getCoglevel());
+
+            case GLAD_HANDER:
+                return gladHander(cog.getCoglevel());
+
+            case MOVER_AND_SHAKER:
+                return moverAndShaker(cog.getCoglevel());
+
+            case TWO_FACE:
+                return twoface(cog.getCoglevel());
+
+            case THE_MINGLER:
+                return theMingler(cog.getCoglevel());
+
+            case MR_HOLLYWOOD:
+                return mrHollywood(cog.getCoglevel());
+
+            default: System.out.println("Error: Invalid cog.cogname: "+cog.getCogname()); return -1;
         }
     }
 
     public int coldCaller(int coglevel){
         switch(coglevel){
-            case 1: return 20; break;
-            case 2: return 30; break;
-            case 3: return 40; break;
-            case 4: return 50; break;
-            case 5: return 200; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 1: return 20;
+            case 2: return 30;
+            case 3: return 40;
+            case 4: return 50;
+            case 5: return 200;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int telemarketer(int coglevel){
         switch(coglevel){
-            case 2: return 40; break;
-            case 3: return 50; break;
-            case 4: return 60; break;
-            case 5: return 70; break;
-            case 6: return 300; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 2: return 40;
+            case 3: return 50;
+            case 4: return 60;
+            case 5: return 70;
+            case 6: return 300;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int nameDropper(int coglevel){
         switch(coglevel){
-            case 3: return 60; break;
-            case 4: return 80; break;
-            case 5: return 100; break;
-            case 6: return 120; break;
-            case 7: return 500; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 3: return 60;
+            case 4: return 80;
+            case 5: return 100;
+            case 6: return 120;
+            case 7: return 500;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int gladHander(int coglevel){
         switch(coglevel){
-            case 4: return 100; break;
-            case 5: return 130; break;
-            case 6: return 160; break;
-            case 7: return 190; break;
-            case 8: return 800; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 4: return 100;
+            case 5: return 130;
+            case 6: return 160;
+            case 7: return 190;
+            case 8: return 800;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int moverAndShaker(int coglevel){
         switch(coglevel){
-            case 5: return 160; break;
-            case 6: return 210; break;
-            case 7: return 260; break;
-            case 8: return 310; break;
-            case 9: return 1300; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 5: return 160;
+            case 6: return 210;
+            case 7: return 260;
+            case 8: return 310;
+            case 9: return 1300;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int twoface(int coglevel){
         switch(coglevel){
-            case 6: return 260; break;
-            case 7: return 340; break;
-            case 8: return 420; break;
-            case 9: return 500; break;
-            case 10: return 2100; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 6: return 260;
+            case 7: return 340;
+            case 8: return 420;
+            case 9: return 500;
+            case 10: return 2100;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
     public int theMingler(int coglevel){
         switch(coglevel){
-            case 7: return 420; break;
-            case 8: return 5550; break;
-            case 9: return 680; break;
-            case 10: return 810; break;
-            case 11: return 3400; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
-        }
-    }
-
-    public int theMingler(int coglevel){
-        switch(coglevel){
-            case 7: return 420; break;
-            case 8: return 5550; break;
-            case 9: return 680; break;
-            case 10: return 810; break;
-            case 11: return 3400; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+            case 7: return 420;
+            case 8: return 5550;
+            case 9: return 680;
+            case 10: return 810;
+            case 11: return 3400;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
@@ -128,52 +118,52 @@ public class SellbotSuit{
             case 20:
             case 30:
             case 40:
-                return 680; break;
+                return 680;
             case 9:
             case 16:
             case 21:
             case 31:
             case 41:
-                return 890; break;
+                return 890;
             case 10:
             case 17:
             case 22:
             case 32:
             case 42:
-                return 1100; break;
+                return 1100;
             case 11:
             case 18:
             case 23:
             case 33:
             case 43:
-                return 1310; break;
+                return 1310;
             case 24:
             case 34:
             case 44:
-                return 1520; break;
+                return 1520;
             case 25:
             case 35:
             case 45:
-                return 1730; break;
+                return 1730;
             case 26:
             case 36:
             case 46:
-                return 1940; break;
+                return 1940;
             case 27:
             case 37:
             case 47:
-                return 2150; break;
+                return 2150;
             case 28:
             case 38:
             case 48:
-                return 2360; break;
+                return 2360;
             case 12:
             case 19:
             case 29:
             case 39:
             case 49:
-                return 5500; break;
-            default: System.out.println("Error: Invalid coglevel "+coglevel); break;
+                return 5500;
+            default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
 
