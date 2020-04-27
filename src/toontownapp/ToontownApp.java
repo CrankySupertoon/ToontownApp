@@ -21,6 +21,7 @@ public class ToontownApp {
       System.out.println("3 - Cashbot");
       System.out.println("4 - Sellbot");
       System.out.println("5 - Exit");
+
       Scanner in = new Scanner(System.in);
       int choice = in.nextInt();
 
@@ -38,7 +39,10 @@ public class ToontownApp {
           Sellbot();
           break;
         default:
-          on = 0; break;
+          on = 0;
+          break;
+        case 5:
+          System.exit(0);
       }
     }
   }
