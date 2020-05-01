@@ -1,12 +1,8 @@
-import toontownapp.ToontownApp;
+package toontownapp;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import toontownapp.ToontownApp;
-
-import static javax.swing.JTextField.*;
 
 public class ToonTownGUI extends JFrame{
     private JTextField textField1;
@@ -36,8 +32,8 @@ public class ToonTownGUI extends JFrame{
         setVisible(true);
     }
 
-    public static void main(String[] args){
-        ToonTownGUI test = new ToonTownGUI();
-        test.createUIComponents();
-    }
+//    public static void main(String[] args){
+//        ToonTownGUI test = new ToonTownGUI();
+//        test.createUIComponents();
+//    }
 }
