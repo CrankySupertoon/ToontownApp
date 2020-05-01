@@ -1,6 +1,7 @@
 import toontownapp.ToontownApp;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import toontownapp.ToontownApp;
@@ -12,29 +13,26 @@ public class ToonTownGUI extends JFrame{
     private JPanel Panel1;
     private JTextArea inputArea;
     private JPanel userInteraction;
-    private JTextArea textArea1;
-    private JPanel systemOutput;
     private JButton startButton;
+    private JTextArea textArea1;
 
     public ToonTownGUI(){
         startButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed (ActionEvent e){
                 //JOptionPane.showConfirmDialog(null,"Hello World");
-                ToontownApp app = new ToontownApp();
-                app.menu();
+
             }
         });
     }
 
     private void createUIComponents(){
         // TODO: place custom component creation code here
-        setContentPane(new ToonTownGUI().Panel1);
-        //Panel1.add(userInteraction);
-        //Panel1.add(systemOutput);
-
+        setContentPane(Panel1);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(550,400);
+        setSize(550,470);
+        inputArea.append("1 - Bossbot\n" + "2 - Lawbot\n" + "3 - Cashbot\n" + "4 - Sellbot\n" + "5 - Exit\n");
+        inputArea.setLineWrap(true);
         setVisible(true);
     }
 
