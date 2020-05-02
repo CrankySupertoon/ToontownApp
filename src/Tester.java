@@ -13,6 +13,7 @@ public class Tester extends JFrame{
     private JTextField inputArea;
     private JPanel MainPanel;
     private JLabel titleInput;
+    private JScrollBar scrollBar1;
     private int input;
     private static boolean read;
 
@@ -50,11 +51,17 @@ public class Tester extends JFrame{
         menu();
     }
 
+    int choice;
+
     private void menu() {
-        read = false;
-        outputArea.append("1 - Bossbot\n" + "2 - Lawbot\n" + "3 - Cashbot\n" + "4 - Sellbot\n" + "5 - Exit\n");
+        outputArea.append("1 - Bossbot\n");
+        outputArea.append("2 - Lawbot\n");
+        outputArea.append("3 - Cashbot\n");
+        outputArea.append("4 - Sellbot\n");
+        outputArea.append("5 - Exit\n");
+        outputArea.append("Enter input: ");
         outputArea.setLineWrap(true);
-        reading();
+        choice = reading();
 
         switch (input) {
             case 1:
@@ -74,11 +81,11 @@ public class Tester extends JFrame{
                 break;
             case 5:
                 System.exit(0);
-            System.out.println("Hello");
         }
     }
 
-    public void reading(){
+    public int reading(){
+        read = false;
         inputArea.setEditable(true);
         while (!read) {
             try {
@@ -87,9 +94,9 @@ public class Tester extends JFrame{
                 e.printStackTrace();
             }
         }
+        return input;
     }
 
-    Scanner in = new Scanner(System.in);
     int choice1, choice2;
 
     public void Bossbot () {
@@ -102,10 +109,10 @@ public class Tester extends JFrame{
         outputArea.append("7 -- Corporate Raider\n");
         outputArea.append("8 -- The Big Cheese\n");
         outputArea.append("Select Bossbot: ");
-        //choice1 = in.nextInt();
+        choice1 = reading();
 
-        //System.out.println("What level are you?");
-        //choice2 = in.nextInt();
+        outputArea.append("\nWhat level are you? ");
+        choice2 = reading();
 
         //BUILD COG WITH BUILDER HERE
         //SEND COG COGFACILITY
@@ -113,7 +120,6 @@ public class Tester extends JFrame{
     }
 
     public void Lawbot(){
-        //outputArea.append();
         outputArea.append("\n1 -- Bottom Feeder\n");
         outputArea.append("2 -- Bloodsucker\n");
         outputArea.append("3 -- Double Talker\n");
@@ -123,16 +129,16 @@ public class Tester extends JFrame{
         outputArea.append("7 -- Legal Eagle\n");
         outputArea.append("8 -- Big Wig\n");
         outputArea.append("Select Lawbot: ");
+        choice1 = reading();;
 
-        //System.out.println("What level are you?");
-        //choice2 = in.nextInt();
+        outputArea.append("\nWhat level are you? ");
+        choice2 = reading();;
 
         //BUILD COG WITH BUILDER HERE
         //SEND COG COGFACILITY
     }
 
     public void Cashbot(){
-        //outputArea.append();
         outputArea.append("\n1 -- Short Change\n");
         outputArea.append("2 -- Penny Pincher\n");
         outputArea.append("3 -- Tightwad\n");
@@ -142,17 +148,16 @@ public class Tester extends JFrame{
         outputArea.append("7 -- Loan Shark\n");
         outputArea.append("8 -- Robber Baron\n");
         outputArea.append("Select Cashbot: ");
+        choice1 = reading();;
 
-        //System.out.println("What level are you?");
-        //choice2 = in.nextInt();
+        outputArea.append("\nWhat level are you? ");
+        choice2 = reading();;
 
         //BUILD COG WITH BUILDER HERE
         //SEND COG COGFACILITY
     }
 
     public void Sellbot(){
-        //outputArea.append();
-
         outputArea.append("\n1 -- Cold Caller\n");
         outputArea.append("2 -- Telemarketer\n");
         outputArea.append("3 -- Name Dropper\n");
@@ -161,9 +166,11 @@ public class Tester extends JFrame{
         outputArea.append("6 -- Two-Face\n");
         outputArea.append("7 -- The Mingler\n");
         outputArea.append("8 -- Mr. Hollywood\n");
-        outputArea.append("Select Sellbot:");
-        //System.out.println("What level are you?");
-        //choice2 = in.nextInt();
+        outputArea.append("Select Sellbot: ");
+        choice1 = reading();
+
+        outputArea.append("\nWhat level are you? ");
+        choice2 = reading();
 
         //BUILD COG WITH BUILDER HERE
         //SEND COG COGFACILITY
