@@ -1,11 +1,11 @@
-import toontownapp.ToontownApp;
+package toontownapp.Test;
+
+//import toontownapp.ToontownApp;
 import toontownapp.cogbuilder.CogName;
 
 import javax.swing.*;
-import javax.swing.text.BadLocationException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Scanner;
 
 public class Tester extends JFrame{
     private JButton calculateButton;
