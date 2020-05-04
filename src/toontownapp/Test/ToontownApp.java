@@ -63,6 +63,12 @@ public class ToontownApp {
 
       buildCog();
       findCogSuit();
+
+      System.out.println("Would you like to enter another cog?");
+      System.out.println("1 - Yes");
+      System.out.println("2 - No");
+      System.out.print("Enter a number: ");
+      on = in.nextInt();
     }
   }//end menu()
 
