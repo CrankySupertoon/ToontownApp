@@ -100,7 +100,15 @@ public class Tester extends JFrame{
         }
         buildCog();
         findCogSuit();
-        menu();
+
+        outputArea.append("\nWould you like to enter another cog?\n");
+        outputArea.append("1 - Yes\n");
+        outputArea.append("2 - No\n");
+        outputArea.append("Enter a number: ");
+        if(reading()==1)
+            menu();
+        else
+            System.exit(0);
     }
 
     public void buildCog(){
