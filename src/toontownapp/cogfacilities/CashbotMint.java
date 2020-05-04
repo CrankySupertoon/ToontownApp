@@ -77,7 +77,7 @@ public class CashbotMint extends CogFacility{
 
     public ArrayList<Integer> returnStats(Cog cog) {
 
-        System.out.println("in Cashbot returnStats(cog)");
+        //System.out.println("in Cashbot returnStats(cog)");
 
         ArrayList<Integer> mints = new ArrayList<Integer>();
 
@@ -96,6 +96,12 @@ public class CashbotMint extends CogFacility{
         mints.add(c); //number of min coins added
         mints.add(z); //number of max coins added
         return mints;
+    }
+
+    public void printStats(ArrayList<Integer> nums){
+        System.out.print("You need :\n\t" + nums.get(0) + " to " + nums.get(1) + " bullions,\n\t");
+        System.out.print(nums.get(2) + " to " + nums.get(3) + " dollars, and \n\t");
+        System.out.print(nums.get(4) + " to " + nums.get(5) + " coins.\n");
     }
 
     /*

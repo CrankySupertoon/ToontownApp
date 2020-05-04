@@ -10,9 +10,16 @@ public class BossbotGolfCourses extends CogFacility{
 
     //protected CogType facilityType = CogType.BOSSBOT;
 
+
+    public void printStats(ArrayList<Integer> nums){
+        System.out.print("You need :\n\t" + nums.get(0) + " back nine(s),\n\t");
+        System.out.print(nums.get(1) + " middle six(es), and \n\t");
+        System.out.print(nums.get(2) + " front three(s).\n");
+    }
+
     public ArrayList<Integer> returnStats(Cog cog) {
 
-        System.out.println("in Bossbot returnStats(cog)");
+        //System.out.println("in Bossbot returnStats(cog)");
 
         ArrayList<Integer> golfCourses = new ArrayList<Integer>();
         int x = 0, y = 0, z = 0; //temporary variables

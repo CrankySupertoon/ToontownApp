@@ -5,17 +5,8 @@
  */
 package toontownapp.Test;
 
-import toontownapp.cogbuilder.Cog;
-import toontownapp.cogbuilder.CogBuilder;
-import toontownapp.cogbuilder.CogName;
-import toontownapp.cogbuilder.CogType;
-//import toontownapp.cogfacilities.BossbotGolfCourses;
-//import toontownapp.cogfacilities.BossbotGolfCourses;
+import toontownapp.cogbuilder.*;
 import toontownapp.cogfacilities.*;
-import toontownapp.cogsuits.BossbotSuit;
-import toontownapp.cogsuits.CashbotSuit;
-import toontownapp.cogsuits.LawbotSuit;
-import toontownapp.cogsuits.SellbotSuit;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,6 +19,7 @@ public class ToontownApp {
   Cog cog;
   Scanner in = new Scanner(System.in);
   int choice1, choice2;
+  ArrayList<Integer> numsNeeded = new ArrayList<Integer>();
 
   public void menu(){
     
@@ -35,12 +27,13 @@ public class ToontownApp {
     int on = 1;
 
     while( on == 1) {
-      System.out.println("Select a Cog Suit\n");
+      System.out.println("\nSelect a Cog Suit");
       System.out.println("1 - Bossbot");
       System.out.println("2 - Lawbot");
       System.out.println("3 - Cashbot");
       System.out.println("4 - Sellbot");
       System.out.println("5 - Exit");
+      System.out.print("Enter a number: ");
 
       Scanner in = new Scanner(System.in);
       int choice = in.nextInt();
@@ -79,11 +72,10 @@ public class ToontownApp {
     cogBuilder.withCogName(cogname);
 
     cog = new Cog(cogBuilder);
-    System.out.println(cog.getCoglevel() + " " + cog.getCogname() + " " + cog.getCogtype());
   }
   
   public void Bossbot(){
-    System.out.println("\n\t1 -- Flunky");
+    System.out.println("\t1 -- Flunky");
     System.out.println("\t2 -- Pencil Pusher");
     System.out.println("\t3 -- Yesman");
     System.out.println("\t4 -- Micromanager");
@@ -91,16 +83,16 @@ public class ToontownApp {
     System.out.println("\t6 -- Head Hunter");
     System.out.println("\t7 -- Corporate Raider");
     System.out.println("\t8 -- The Big Cheese");
-    System.out.println("Select Bossbot: ");
+    System.out.print("Select Bossbot: ");
     choice1 = in.nextInt();
     cogname = findBossbot(choice1);
 
-    System.out.println("What level are you?");
+    System.out.print("What level are you?: ");
     coglvl = in.nextInt();
 
   }
   public void Lawbot(){
-    System.out.println("\n\t1 -- Bottom Feeder");
+    System.out.println("\t1 -- Bottom Feeder");
     System.out.println("\t2 -- Bloodsucker");
     System.out.println("\t3 -- Double Talker");
     System.out.println("\t4 -- Ambulance Chaser");
@@ -108,15 +100,15 @@ public class ToontownApp {
     System.out.println("\t6 -- Spin Doctor");
     System.out.println("\t7 -- Legal Eagle");
     System.out.println("\t8 -- Big Wig");
-    System.out.println("Select Lawbot: ");
+    System.out.print("Select Lawbot: ");
     choice1 = in.nextInt();
     cogname = findLawbot(choice1);
 
-    System.out.println("What level are you?");
+    System.out.print("What level are you?: ");
     coglvl = in.nextInt();
   }
   public void Cashbot(){
-    System.out.println("\n\t1 -- Short Change");
+    System.out.println("\t1 -- Short Change");
     System.out.println("\t2 -- Penny Pincher");
     System.out.println("\t3 -- Tightwad");
     System.out.println("\t4 -- Bean Counter");
@@ -124,16 +116,16 @@ public class ToontownApp {
     System.out.println("\t6 -- Money Bags");
     System.out.println("\t7 -- Loan Shark");
     System.out.println("\t8 -- Robber Baron");
-    System.out.println("Select Cashbot: ");
+    System.out.print("Select Cashbot: ");
     choice1 = in.nextInt();
     cogname = findCashbot(choice1);
 
-    System.out.println("What level are you?");
+    System.out.print("What level are you?: ");
     coglvl = in.nextInt();
   }
   public void Sellbot(){
     System.out.println("Select Sellbot: ");
-    System.out.println("\n\t1 -- Cold Caller");
+    System.out.println("\t1 -- Cold Caller");
     System.out.println("\t2 -- Telemarketer");
     System.out.println("\t3 -- Name Dropper");
     System.out.println("\t4 -- Glad Hander");
@@ -141,10 +133,11 @@ public class ToontownApp {
     System.out.println("\t6 -- Two-Face");
     System.out.println("\t7 -- The Mingler");
     System.out.println("\t8 -- Mr. Hollywood");
+    System.out.print("Select Sellbot: ");
     choice1 = in.nextInt();
     cogname = findSellbot(choice1);
 
-    System.out.println("What level are you?");
+    System.out.print("What level are you?: ");
     coglvl = in.nextInt();
   }
 
@@ -203,9 +196,7 @@ public class ToontownApp {
   }
 
   public void findCogSuit(){
-    int num = 0;
 
-    ArrayList<Integer> numsNeeded = new ArrayList<Integer>();
     CogFacility_IF cogFacility_if = null;
 
     switch (cog.getCogtype()) {
@@ -222,14 +213,12 @@ public class ToontownApp {
         break;
     }
       numsNeeded = cogFacility_if.returnStats(cog);
-      System.out.println("Nums needed: " + numsNeeded);
+      cogFacility_if.printStats(numsNeeded);
 
   }
+
   public static void main(String[] args) {
     ToontownApp app = new ToontownApp();
     app.menu();
   }
-
-
-  
 }

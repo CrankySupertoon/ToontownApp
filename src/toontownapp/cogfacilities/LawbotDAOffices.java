@@ -12,7 +12,7 @@ public class LawbotDAOffices extends CogFacility{
 
     public ArrayList<Integer> returnStats(Cog cog) {
 
-        System.out.println("in LAWBOT returnStats(cog)");
+        //System.out.println("in LAWBOT returnStats(cog)");
 
         ArrayList<Integer> offices = new ArrayList<Integer>();
         int a = 0, b = 0, c = 0, d = 0; //temporary variables
@@ -63,6 +63,13 @@ public class LawbotDAOffices extends CogFacility{
         offices.add(b); //number of B offices added
         offices.add(a); //number of A offices added
         return offices;
+    }
+
+    public void printStats(ArrayList<Integer> nums){
+        System.out.print("You need:\n\t" + nums.get(0) + " 'D' office(s),\n\t");
+        System.out.print(nums.get(1) + " 'C' office(s),\n\t");
+        System.out.print(nums.get(2) +" 'B' office(s), and \n\t");
+        System.out.print(nums.get(3) + " 'A' office(s).\n");
     }
 
         /*

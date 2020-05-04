@@ -12,7 +12,7 @@ public class SellbotFactory extends CogFacility{
 
         public ArrayList<Integer> returnStats(Cog cog) {
 
-            System.out.println("in SELLbot returnStats(cog)");
+            //System.out.println("in SELLbot returnStats(cog)");
 
             ArrayList<Integer> factories = new ArrayList<Integer>();
             int x = 0, y = 0; //temporary variables
@@ -38,6 +38,11 @@ public class SellbotFactory extends CogFacility{
             factories.add(y); //number of shorts added
             return factories;
         }
+
+    public void printStats(ArrayList<Integer> nums){
+        System.out.print("You need :\n\t" + nums.get(0) + " long(s), and \n\t");
+        System.out.println(nums.get(1) + " short(s).");
+    }
 }
 
         /*
