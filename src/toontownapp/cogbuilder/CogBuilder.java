@@ -18,7 +18,7 @@ public class CogBuilder {
   protected CogName cogname;
   protected int coglevel;
   
-  public CogBuilder(CogType cogtype, CogName cogname){
+  public CogBuilder(CogType cogtype){//}, CogName cogname){
     if(cogtype == null)
       throw new IllegalArgumentException("Cog type cannot be null");
     this.cogtype = cogtype;

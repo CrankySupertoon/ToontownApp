@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 public class BossbotGolfCourses extends CogFacility{
 
-    protected CogType facilityType = CogType.BOSSBOT;
+    //protected CogType facilityType = CogType.BOSSBOT;
 
     public ArrayList<Integer> returnStats(Cog cog) {
+
+        System.out.println("in Bossbot returnStats(cog)");
 
         ArrayList<Integer> golfCourses = new ArrayList<Integer>();
         int x = 0, y = 0, z = 0; //temporary variables

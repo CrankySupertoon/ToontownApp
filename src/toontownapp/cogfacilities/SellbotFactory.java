@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 public class SellbotFactory extends CogFacility{
 
-        protected CogType facilityType = CogType.SELLBOT;
+        //protected CogType facilityType = CogType.SELLBOT;
 
         public ArrayList<Integer> returnStats(Cog cog) {
+
+            System.out.println("in SELLbot returnStats(cog)");
 
             ArrayList<Integer> factories = new ArrayList<Integer>();
             int x = 0, y = 0; //temporary variables

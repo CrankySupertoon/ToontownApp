@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 public class LawbotDAOffices extends CogFacility{
 
-    protected CogType facilityType = CogType.LAWBOT;
+    //protected CogType facilityType = CogType.LAWBOT;
 
     public ArrayList<Integer> returnStats(Cog cog) {
+
+        System.out.println("in LAWBOT returnStats(cog)");
 
         ArrayList<Integer> offices = new ArrayList<Integer>();
         int a = 0, b = 0, c = 0, d = 0; //temporary variables

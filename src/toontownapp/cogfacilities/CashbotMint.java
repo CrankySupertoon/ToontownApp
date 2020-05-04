@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class CashbotMint extends CogFacility{
 
-    protected CogType facilityType = CogType.CASHBOT;
+    //protected CogType facilityType = CogType.CASHBOT;
 
     int x = 0, y = 0, z = 0; //temporary variables
     int a = 0, b = 0, c = 0;
@@ -76,6 +76,8 @@ public class CashbotMint extends CogFacility{
     }//...
 
     public ArrayList<Integer> returnStats(Cog cog) {
+
+        System.out.println("in Cashbot returnStats(cog)");
 
         ArrayList<Integer> mints = new ArrayList<Integer>();
 
