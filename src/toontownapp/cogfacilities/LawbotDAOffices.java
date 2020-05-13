@@ -50,11 +50,9 @@ public class LawbotDAOffices extends CogFacility{
         }
 
         //CALCULATE A OFFICES NEEDED
-        if(total <= 564){
+        if (564 >= total && total > 0){
             a = total / 564; //A Offices Needed
-            total = total % 564; //extra jury notices
-            if (564 >= total && total > 0)//extra jury notices -> add another A Office
-                a++;
+            a++;
         }
 
         //ADD TOTALS TO INTEGER ARRAY

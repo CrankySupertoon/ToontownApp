@@ -157,7 +157,7 @@ public class BossbotSuit {
             case 28:
             case 38:
             case 48:
-                return 100000;
+                return 10000;
             case 12:
             case 19:
             case 29:

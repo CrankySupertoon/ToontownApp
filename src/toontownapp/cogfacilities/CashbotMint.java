@@ -36,11 +36,9 @@ public class CashbotMint extends CogFacility{
         }
 
         //CALCULATE MINIMUM COINS NEEDED
-        if(total <= 356){
+        if(356 >= total && total > 0){
             c = total / 356; //shorts needed
-            total = total % 356; //extra merits
-            if(356 >= total && total > 0)//extra merits -> add another short
-                c++;
+            c++;
         }
     }
 
@@ -67,11 +65,9 @@ public class CashbotMint extends CogFacility{
         }
 
         //CALCULATE MAXIMUM COINS NEEDED
-        if(total >= 554){
+        if(554 >= total && total > 0){
             z = total / 554; //shorts needed
-            total = total % 554; //extra merits
-            if(554 >= total && total > 0)//extra merits -> add another short
-                z++;
+            z++;
         }
     }//...
 

@@ -48,11 +48,9 @@ public class BossbotGolfCourses extends CogFacility{
         }
 
         //CALCULATE FRONT THREES NEEDED
-        if(total <= 764){
+        if (764 >= total && total > 0){
             z = total / 764; //front threes needed
-            total = total % 764; //extra needed
-            if (764 >= total && total > 0)//extra needed -> add another front three
-                z++;
+            z++;
         }
 
         //ADD TOTALS TO INTEGER ARRAY
