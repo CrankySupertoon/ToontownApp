@@ -218,8 +218,8 @@ public class ToontownApp {
         System.exit(0);
         break;
     }
-      numsNeeded = cogFacility_if.returnStats(cog);
-      cogFacility_if.printStats(numsNeeded);
+      //numsNeeded = cogFacility_if.returnStats(cog);
+      //cogFacility_if.printStats(numsNeeded);
 
   }
 

@@ -11,13 +11,19 @@ public class BossbotGolfCourses extends CogFacility{
     //protected CogType facilityType = CogType.BOSSBOT;
 
 
-    public void printStats(ArrayList<Integer> nums){
-        System.out.print("You need :\n\t" + nums.get(0) + " back nine(s),\n\t");
-        System.out.print(nums.get(1) + " middle six(es), and \n\t");
-        System.out.print(nums.get(2) + " front three(s).\n");
+    public String printStats(ArrayList<Integer> nums){
+        //System.out.print("You need :\n\t" + nums.get(0) + " back nine(s),\n\t");
+        //System.out.print(nums.get(1) + " middle six(es), and \n\t");
+        //System.out.print(nums.get(2) + " front three(s).\n");
+        //testing this for gui
+        String x;
+        x="You need :\n  " + nums.get(0) + " back nine(s),\n  ";
+        x+=nums.get(1) + " middle six(es), and \n  ";
+        x+=nums.get(2) + " front three(s).\n";
+        return x;
     }
 
-    public ArrayList<Integer> returnStats(Cog cog) {
+    public String returnStats(Cog cog) {
 
         //System.out.println("in Bossbot returnStats(cog)");
 
@@ -57,7 +63,8 @@ public class BossbotGolfCourses extends CogFacility{
         golfCourses.add(x); //number of back nines added
         golfCourses.add(y); //number of middle sixes added
         golfCourses.add(z); //number of front threes added
-        return golfCourses;
+        this.printStats(golfCourses);
+        return this.printStats(golfCourses);
     }
 
         /*

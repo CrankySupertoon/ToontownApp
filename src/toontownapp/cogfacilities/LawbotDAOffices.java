@@ -10,7 +10,7 @@ public class LawbotDAOffices extends CogFacility{
 
     //protected CogType facilityType = CogType.LAWBOT;
 
-    public ArrayList<Integer> returnStats(Cog cog) {
+    public String returnStats(Cog cog) {
 
         //System.out.println("in LAWBOT returnStats(cog)");
 
@@ -60,14 +60,21 @@ public class LawbotDAOffices extends CogFacility{
         offices.add(c); //number of C offices added
         offices.add(b); //number of B offices added
         offices.add(a); //number of A offices added
-        return offices;
+        this.printStats(offices);
+        return this.printStats(offices);
     }
 
-    public void printStats(ArrayList<Integer> nums){
-        System.out.print("You need:\n\t" + nums.get(0) + " 'D' office(s),\n\t");
-        System.out.print(nums.get(1) + " 'C' office(s),\n\t");
-        System.out.print(nums.get(2) +" 'B' office(s), and \n\t");
-        System.out.print(nums.get(3) + " 'A' office(s).\n");
+    public String printStats(ArrayList<Integer> nums){
+        //System.out.print("You need:\n\t" + nums.get(0) + " 'D' office(s),\n\t");
+        //System.out.print(nums.get(1) + " 'C' office(s),\n\t");
+        //System.out.print(nums.get(2) +" 'B' office(s), and \n\t");
+        //System.out.print(nums.get(3) + " 'A' office(s).\n");
+        String x;
+        x="You need:\n  " + nums.get(0) + " 'D' office(s),\n  ";
+        x+=nums.get(1) + " 'C' office(s),\n  ";
+        x+=nums.get(2) +" 'B' office(s), and \n  ";
+        x+=nums.get(3) + " 'A' office(s).\n";
+        return x;
     }
 
         /*

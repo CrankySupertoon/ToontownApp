@@ -9,9 +9,9 @@ public abstract class CogFacility implements CogFacility_IF{
 
     protected CogType facilityType;
 
-    public abstract ArrayList<Integer> returnStats(Cog cog);
+    public abstract String returnStats(Cog cog);
 
-    public abstract void printStats(ArrayList<Integer> nums);
+    public abstract String printStats(ArrayList<Integer> nums);
 
     public void setFacilityType(CogType facilityType) {
         this.facilityType = facilityType;

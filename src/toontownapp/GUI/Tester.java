@@ -37,7 +37,6 @@ public class Tester extends JFrame{
 
     public Tester(){
         calculateButton.addActionListener(new ActionListener(){
-            @Override
             public void actionPerformed (ActionEvent e){
                 //JOptionPane.showConfirmDialog(null,"Hello World");
                 try{
@@ -66,6 +65,7 @@ public class Tester extends JFrame{
     int choice;
 
     private void menu() {
+        outputArea.setText("");
         outputArea.append("1 - Bossbot\n");
         outputArea.append("2 - Lawbot\n");
         outputArea.append("3 - Cashbot\n");
@@ -74,21 +74,26 @@ public class Tester extends JFrame{
         outputArea.append("Enter input: ");
         outputArea.setLineWrap(true);
         choice = reading();
+        outputArea.setText("");
 
         switch (input) {
             case 1:
+                systemOut.append("Cog Type Selected: Bossbot\n");
                 cogtype = CogType.BOSSBOT;
                 Bossbot();
                 break;
             case 2:
+                systemOut.append("Cog Type Selected: Lawbot\n");
                 cogtype = CogType.LAWBOT;
                 Lawbot();
                 break;
             case 3:
+                systemOut.append("Cog Type Selected: Cashbot\n");
                 cogtype = CogType.CASHBOT;
                 Cashbot();
                 break;
             case 4:
+                systemOut.append("Cog Type Selected: Sellbot\n");
                 cogtype = CogType.SELLBOT;
                 Sellbot();
                 break;
@@ -98,15 +103,17 @@ public class Tester extends JFrame{
             case 5:
                 System.exit(0);
         }
-        buildCog();
-        findCogSuit();
-
-        outputArea.append("\nWould you like to enter another cog?\n");
+        this.buildCog();
+        this.findCogSuit();
+        outputArea.setText("");
+        outputArea.append("Would you like to enter another cog?\n");
         outputArea.append("1 - Yes\n");
         outputArea.append("2 - No\n");
         outputArea.append("Enter a number: ");
-        if(reading()==1)
+        if(reading()==1) {
+            systemOut.setText("");
             menu();
+        }
         else
             System.exit(0);
     }
@@ -134,7 +141,7 @@ public class Tester extends JFrame{
     }
 
     public void Bossbot () {
-        outputArea.append("\n1 -- Flunky\n");
+        outputArea.append("1 -- Flunky\n");
         outputArea.append("2 -- Pencil Pusher\n");
         outputArea.append("3 -- Yesman\n");
         outputArea.append("4 -- Micromanager\n");
@@ -144,9 +151,12 @@ public class Tester extends JFrame{
         outputArea.append("8 -- The Big Cheese\n");
         outputArea.append("Select Bossbot: ");
         cogname = findBossbot(reading());
+        systemOut.append("Cog Selected: "+cogname);
 
-        outputArea.append("\nWhat level are you? ");
+        outputArea.setText("");
+        outputArea.append("What level are you? ");
         coglvl = reading();
+        systemOut.append("\nLevel Selected: "+coglvl);
 
         //BUILD COG WITH BUILDER HERE
         //SEND COG COGFACILITY
@@ -154,7 +164,7 @@ public class Tester extends JFrame{
     }
 
     public void Lawbot(){
-        outputArea.append("\n1 -- Bottom Feeder\n");
+        outputArea.append("1 -- Bottom Feeder\n");
         outputArea.append("2 -- Bloodsucker\n");
         outputArea.append("3 -- Double Talker\n");
         outputArea.append("4 -- Ambulance Chaser\n");
@@ -164,16 +174,19 @@ public class Tester extends JFrame{
         outputArea.append("8 -- Big Wig\n");
         outputArea.append("Select Lawbot: ");
         cogname = findLawbot(reading());
+        systemOut.append("Cog Selected: "+cogname);
 
-        outputArea.append("\nWhat level are you? ");
+        outputArea.setText("");
+        outputArea.append("What level are you? ");
         coglvl = reading();
+        systemOut.append("\nLevel: "+coglvl);
 
         //BUILD COG WITH BUILDER HERE
         //SEND COG COGFACILITY
     }
 
     public void Cashbot(){
-        outputArea.append("\n1 -- Short Change\n");
+        outputArea.append("1 -- Short Change\n");
         outputArea.append("2 -- Penny Pincher\n");
         outputArea.append("3 -- Tightwad\n");
         outputArea.append("4 -- Bean Counter\n");
@@ -183,16 +196,18 @@ public class Tester extends JFrame{
         outputArea.append("8 -- Robber Baron\n");
         outputArea.append("Select Cashbot: ");
         cogname = findCashbot(reading());
+        systemOut.append("Cog Selected: "+cogname);
 
-        outputArea.append("\nWhat level are you? ");
+        outputArea.setText("");
+        outputArea.append("What level are you? ");
         coglvl = reading();
-
+        systemOut.append("\nLevel: "+coglvl);
         //BUILD COG WITH BUILDER HERE
         //SEND COG COGFACILITY
     }
 
     public void Sellbot(){
-        outputArea.append("\n1 -- Cold Caller\n");
+        outputArea.append("1 -- Cold Caller\n");
         outputArea.append("2 -- Telemarketer\n");
         outputArea.append("3 -- Name Dropper\n");
         outputArea.append("4 -- Glad Hander\n");
@@ -202,9 +217,12 @@ public class Tester extends JFrame{
         outputArea.append("8 -- Mr. Hollywood\n");
         outputArea.append("Select Sellbot: ");
         cogname = findSellbot(reading());
+        systemOut.append("Cog Selected: "+cogname);
 
+        outputArea.setText("");
         outputArea.append("\nWhat level are you? ");
         coglvl = reading();
+        systemOut.append("\nLevel: "+coglvl);
 
         //BUILD COG WITH BUILDER HERE
         //SEND COG COGFACILITY
@@ -285,7 +303,8 @@ public class Tester extends JFrame{
                 System.exit(0);
                 break;
         }
-        numsNeeded = cogFacility_if.returnStats(cog);
-        cogFacility_if.printStats(numsNeeded);
+        //numsNeeded = cogFacility_if.returnStats(cog);
+        systemOut.append("\n\n"+cogFacility_if.returnStats(cog)+"\n");
+        //systemOut.append("\n\n"+cogFacility_if.printStats(numsNeeded)+"\n");
     }
 }

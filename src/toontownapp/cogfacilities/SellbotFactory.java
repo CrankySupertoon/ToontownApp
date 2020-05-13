@@ -10,7 +10,7 @@ public class SellbotFactory extends CogFacility{
 
         //protected CogType facilityType = CogType.SELLBOT;
 
-        public ArrayList<Integer> returnStats(Cog cog) {
+        public String returnStats(Cog cog) {
 
             //System.out.println("in SELLbot returnStats(cog)");
 
@@ -34,12 +34,16 @@ public class SellbotFactory extends CogFacility{
 
             factories.add(x); //number of longs added
             factories.add(y); //number of shorts added
-            return factories;
+            return this.printStats(factories);
         }
 
-    public void printStats(ArrayList<Integer> nums){
-        System.out.print("You need :\n\t" + nums.get(0) + " long(s), and \n\t");
-        System.out.println(nums.get(1) + " short(s).");
+    public String printStats(ArrayList<Integer> nums) {
+        //System.out.print("You need :\n\t" + nums.get(0) + " long(s), and \n\t");
+        //System.out.println(nums.get(1) + " short(s).");
+        String x;
+        x="You need :\n  " + nums.get(0) + " long(s), and \n  ";
+        x+=nums.get(1) + " short(s).";
+        return x;
     }
 }
 
