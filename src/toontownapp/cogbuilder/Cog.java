@@ -27,15 +27,10 @@ public class Cog implements CogIF{
   public CogType getCogtype() {
     return cogtype;
   }
-
-
   public CogName getCogname() {
     return cogname;
   }
-
   public int getCoglevel() {
     return coglevel;
   }
-
-
 }

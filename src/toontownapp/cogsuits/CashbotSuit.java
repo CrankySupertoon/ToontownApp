@@ -167,5 +167,4 @@ public class CashbotSuit{
             default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
-
 }

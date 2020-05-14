@@ -37,17 +37,13 @@ public class CogBuilder {
   public Cog build(){
       return new Cog(this);
   }
-
   CogType getCogType() {
     return cogtype;
   }
-
   CogName getCogName() {
     return cogname;
   }
-
   int getCogLevel() {
     return coglevel;
   }
-
 }

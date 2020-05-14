@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 public class CashbotMint extends CogFacility{
 
-    //protected CogType facilityType = CogType.CASHBOT;
-
     int x = 0, y = 0, z = 0; //temporary variables
     int a = 0, b = 0, c = 0;
 
@@ -41,7 +39,7 @@ public class CashbotMint extends CogFacility{
             c = total / 356; //shorts needed
             c++;
         }
-    }
+    }//cashbotsLow()
 
     void cashbotsHigh(int total){
 
@@ -70,7 +68,7 @@ public class CashbotMint extends CogFacility{
             z = total / 554; //shorts needed
             z++;
         }
-    }//...
+    }//cashbotsHigh()
 
     public String returnStats(CogIF cog) {
 
@@ -84,7 +82,6 @@ public class CashbotMint extends CogFacility{
         cashbotsLow(total);
         cashbotsHigh(total);
 
-
         //ADD TOTALS TO INTEGER ARRAY
         mints.add(a); //number of min bulls added
         mints.add(x); //number of max bulls added
@@ -94,9 +91,10 @@ public class CashbotMint extends CogFacility{
         mints.add(z); //number of max coins added
         this.printStats(mints);
         return this.printStats(mints);
-    }
+    }//returnStats()
 
     public String printStats(ArrayList<Integer> nums){
+        //TEST:
         //System.out.print("You need :\n\t" + nums.get(0) + " to " + nums.get(1) + " bullions,\n\t");
         //System.out.print(nums.get(2) + " to " + nums.get(3) + " dollars, and \n\t");
         //System.out.print(nums.get(4) + " to " + nums.get(5) + " coins.\n");
@@ -106,7 +104,6 @@ public class CashbotMint extends CogFacility{
         x+=nums.get(4) + " to " + nums.get(5) + " coins.\n";
         return x;
     }
-
     /*
     TYPE    COGBUCKS EARNED
     Coin    356 - 554

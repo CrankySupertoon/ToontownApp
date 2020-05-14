@@ -9,14 +9,11 @@ import java.util.ArrayList;
 
 public class BossbotGolfCourses extends CogFacility{
 
-    //protected CogType facilityType = CogType.BOSSBOT;
-
-
     public String printStats(ArrayList<Integer> nums){
+        //TEST:
         //System.out.print("You need :\n\t" + nums.get(0) + " back nine(s),\n\t");
         //System.out.print(nums.get(1) + " middle six(es), and \n\t");
         //System.out.print(nums.get(2) + " front three(s).\n");
-        //testing this for gui
         String x;
         x="You need :\n  " + nums.get(0) + " back nine(s),\n  ";
         x+=nums.get(1) + " middle six(es), and \n  ";
@@ -25,8 +22,6 @@ public class BossbotGolfCourses extends CogFacility{
     }
 
     public String returnStats(CogIF cog) {
-
-        //System.out.println("in Bossbot returnStats(cog)");
 
         ArrayList<Integer> golfCourses = new ArrayList<Integer>();
         int x = 0, y = 0, z = 0; //temporary variables
@@ -67,12 +62,10 @@ public class BossbotGolfCourses extends CogFacility{
         this.printStats(golfCourses);
         return this.printStats(golfCourses);
     }
-
         /*
     TYPE            STOCK OPTIONS
     Front Three     764
     Middle Six      1874
     Back Nine       3350
      */
-
 }

@@ -1,4 +1,4 @@
-package toontownapp.GUI;
+package toontownapp.Test;
 
 import javax.swing.*;
 import java.awt.*;

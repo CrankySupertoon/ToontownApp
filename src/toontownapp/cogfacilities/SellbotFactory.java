@@ -9,11 +9,7 @@ import java.util.ArrayList;
 
 public class SellbotFactory extends CogFacility{
 
-        //protected CogType facilityType = CogType.SELLBOT;
-
         public String returnStats(CogIF cog) {
-
-            //System.out.println("in SELLbot returnStats(cog)");
 
             ArrayList<Integer> factories = new ArrayList<Integer>();
             int x = 0, y = 0; //temporary variables
@@ -38,7 +34,8 @@ public class SellbotFactory extends CogFacility{
             return this.printStats(factories);
         }
 
-    public String printStats(ArrayList<Integer> nums) {
+    public String printStats(ArrayList<Integer> nums){
+            //TEST
         //System.out.print("You need :\n\t" + nums.get(0) + " long(s), and \n\t");
         //System.out.println(nums.get(1) + " short(s).");
         String x;

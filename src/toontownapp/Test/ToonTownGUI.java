@@ -1,4 +1,4 @@
-package toontownapp.GUI;
+package toontownapp.Test;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +17,6 @@ public class ToonTownGUI extends JFrame{
             @Override
             public void actionPerformed (ActionEvent e){
                 //JOptionPane.showConfirmDialog(null,"Hello World");
-
             }
         });
     }

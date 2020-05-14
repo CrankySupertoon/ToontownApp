@@ -9,11 +9,7 @@ import java.util.ArrayList;
 
 public class LawbotDAOffices extends CogFacility{
 
-    //protected CogType facilityType = CogType.LAWBOT;
-
     public String returnStats(CogIF cog) {
-
-        //System.out.println("in LAWBOT returnStats(cog)");
 
         ArrayList<Integer> offices = new ArrayList<Integer>();
         int a = 0, b = 0, c = 0, d = 0; //temporary variables
@@ -66,6 +62,7 @@ public class LawbotDAOffices extends CogFacility{
     }
 
     public String printStats(ArrayList<Integer> nums){
+        //TEST:
         //System.out.print("You need:\n\t" + nums.get(0) + " 'D' office(s),\n\t");
         //System.out.print(nums.get(1) + " 'C' office(s),\n\t");
         //System.out.print(nums.get(2) +" 'B' office(s), and \n\t");
@@ -77,7 +74,6 @@ public class LawbotDAOffices extends CogFacility{
         x+=nums.get(3) + " 'A' office(s).\n";
         return x;
     }
-
         /*
  TYPE   JURY NOTICES EARNED
     A   564
