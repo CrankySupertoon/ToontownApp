@@ -14,8 +14,6 @@ public class Client extends JFrame{
     private JTextArea systemOut;
     private JTextField inputArea;
     private JPanel MainPanel;
-    private JLabel titleInput;
-    private JScrollPane scrollPane;
 
     private int input;
     private static boolean read;
