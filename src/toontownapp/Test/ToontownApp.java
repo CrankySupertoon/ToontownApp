@@ -8,7 +8,6 @@ package toontownapp.Test;
 import toontownapp.cogbuilder.*;
 import toontownapp.cogfacilities.*;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ToontownApp {
@@ -16,17 +15,16 @@ public class ToontownApp {
   CogName cogname;
   CogType cogtype;
   int coglvl;
-  Cog cog;
+  CogIF cog;
   Scanner in = new Scanner(System.in);
   int choice1, choice2;
-  ArrayList<Integer> numsNeeded = new ArrayList<Integer>();
+  String numsNeeded = "";
 
   public void menu(){
-    
-    //Cog cog = new Cog();
-    int on = 1;
 
-    while( on == 1) {
+    boolean on = true;
+
+    while(on) {
       System.out.println("\nSelect a Cog Suit");
       System.out.println("1 - Bossbot");
       System.out.println("2 - Lawbot");
@@ -56,28 +54,31 @@ public class ToontownApp {
           Sellbot();
           break;
         default:
-          on = 0;
+          on = false;
         case 5:
           System.exit(0);
       }
 
-      buildCog();
+      callbuildCog();
       findCogSuit();
 
       System.out.println("Would you like to enter another cog?");
       System.out.println("1 - Yes");
       System.out.println("2 - No");
       System.out.print("Enter a number: ");
-      on = in.nextInt();
+      switch(in.nextInt()){
+        case 1: break;
+        default: on = false; break;
+      }
     }
   }//end menu()
 
-  public void buildCog(){
-    CogBuilder cogBuilder = new CogBuilder(cogtype);
-    cogBuilder.withCogLevel(coglvl);
-    cogBuilder.withCogName(cogname);
+  public void callbuildCog(){
 
-    cog = new Cog(cogBuilder);
+    //acts as director for cog builder
+    CogDirector cogDirector = new CogDirector();
+
+    cog = cogDirector.buildCog(cogtype, coglvl, cogname);
   }
   
   public void Bossbot(){
@@ -219,7 +220,7 @@ public class ToontownApp {
         break;
     }
       //numsNeeded = cogFacility_if.returnStats(cog);
-      //cogFacility_if.printStats(numsNeeded);
+      System.out.print(cogFacility_if.returnStats(cog));
 
   }
 

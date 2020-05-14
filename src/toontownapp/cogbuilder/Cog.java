@@ -12,7 +12,7 @@ import toontownapp.cogbuilder.CogName;
 import toontownapp.cogbuilder.CogType;
 
 
-public class Cog {
+public class Cog implements CogIF{
   
     protected final CogType cogtype;
     protected final CogName cogname;

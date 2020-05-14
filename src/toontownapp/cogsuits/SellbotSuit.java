@@ -3,7 +3,7 @@ import toontownapp.cogbuilder.*;
 
 public class SellbotSuit{
 
-    public int getMeritsNeeded(Cog cog){
+    public int getMeritsNeeded(CogIF cog){
 
         switch(cog.getCogname()){
             case COLD_CALLER:

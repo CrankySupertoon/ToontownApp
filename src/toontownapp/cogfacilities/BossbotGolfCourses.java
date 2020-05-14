@@ -1,6 +1,7 @@
 package toontownapp.cogfacilities;
 
 import toontownapp.cogbuilder.Cog;
+import toontownapp.cogbuilder.CogIF;
 import toontownapp.cogbuilder.CogType;
 import toontownapp.cogsuits.BossbotSuit;
 
@@ -23,7 +24,7 @@ public class BossbotGolfCourses extends CogFacility{
         return x;
     }
 
-    public String returnStats(Cog cog) {
+    public String returnStats(CogIF cog) {
 
         //System.out.println("in Bossbot returnStats(cog)");
 

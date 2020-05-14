@@ -1,6 +1,7 @@
 package toontownapp.cogfacilities;
 
 import toontownapp.cogbuilder.Cog;
+import toontownapp.cogbuilder.CogIF;
 import toontownapp.cogbuilder.CogType;
 import toontownapp.cogsuits.LawbotSuit;
 
@@ -10,7 +11,7 @@ public class LawbotDAOffices extends CogFacility{
 
     //protected CogType facilityType = CogType.LAWBOT;
 
-    public String returnStats(Cog cog) {
+    public String returnStats(CogIF cog) {
 
         //System.out.println("in LAWBOT returnStats(cog)");
 

@@ -1,9 +1,9 @@
 package toontownapp.cogsuits;
 import toontownapp.cogbuilder.*;
 
-public class BossbotSuit {
+public class BossbotSuit{
 
-    public int getStockOptionsNeeded(Cog cog){
+    public int getStockOptionsNeeded(CogIF cog){
 
         switch(cog.getCogname()){
             case FLUNKY:
@@ -167,5 +167,4 @@ public class BossbotSuit {
             default: System.out.println("Error: Invalid coglevel "+coglevel); return -1;
         }
     }
-
 }

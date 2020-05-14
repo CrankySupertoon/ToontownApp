@@ -3,7 +3,7 @@ import toontownapp.cogbuilder.*;
 
 public class CashbotSuit{
 
-    public int getCogbucksNeeded(Cog cog){
+    public int getCogbucksNeeded(CogIF cog){
 
         switch(cog.getCogname()){
             case SHORT_CHANGE:

@@ -1,6 +1,7 @@
 package toontownapp.cogfacilities;
 
 import toontownapp.cogbuilder.Cog;
+import toontownapp.cogbuilder.CogIF;
 import toontownapp.cogbuilder.CogType;
 import toontownapp.cogsuits.CashbotSuit;
 
@@ -71,7 +72,7 @@ public class CashbotMint extends CogFacility{
         }
     }//...
 
-    public String returnStats(Cog cog) {
+    public String returnStats(CogIF cog) {
 
         //System.out.println("in Cashbot returnStats(cog)");
 

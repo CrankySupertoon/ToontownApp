@@ -1,6 +1,7 @@
 package toontownapp.cogfacilities;
 
 import toontownapp.cogbuilder.Cog;
+import toontownapp.cogbuilder.CogIF;
 import toontownapp.cogbuilder.CogType;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ public abstract class CogFacility implements CogFacility_IF{
 
     protected CogType facilityType;
 
-    public abstract String returnStats(Cog cog);
+    public abstract String returnStats(CogIF cog);
 
     public abstract String printStats(ArrayList<Integer> nums);
 

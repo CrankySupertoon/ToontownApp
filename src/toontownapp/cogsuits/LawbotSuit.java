@@ -3,7 +3,7 @@ import toontownapp.cogbuilder.*;
 
 public class LawbotSuit{
 
-    public int getJuryNoticesNeeded(Cog cog){
+    public int getJuryNoticesNeeded(CogIF cog){
 
         switch(cog.getCogname()){
             case BOTTOM_FEEDER:

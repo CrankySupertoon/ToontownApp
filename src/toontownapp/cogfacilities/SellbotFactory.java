@@ -1,6 +1,7 @@
 package toontownapp.cogfacilities;
 
 import toontownapp.cogbuilder.Cog;
+import toontownapp.cogbuilder.CogIF;
 import toontownapp.cogbuilder.CogType;
 import toontownapp.cogsuits.SellbotSuit;
 
@@ -10,7 +11,7 @@ public class SellbotFactory extends CogFacility{
 
         //protected CogType facilityType = CogType.SELLBOT;
 
-        public String returnStats(Cog cog) {
+        public String returnStats(CogIF cog) {
 
             //System.out.println("in SELLbot returnStats(cog)");
 
