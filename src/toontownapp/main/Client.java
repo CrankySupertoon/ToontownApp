@@ -94,8 +94,9 @@ public class Client extends JFrame{
             case 5:
                 System.exit(0);
         }
-        this.callbuildCog();
-        this.findCogSuit();
+        this.callbuildCog(); //build the Cog you are about to calculate for
+        this.findCogSuit(); //use CogSuitFacade
+
         outputArea.setText("");
         outputArea.append("Would you like to enter another cog?\n");
         outputArea.append("1 - Yes\n");
