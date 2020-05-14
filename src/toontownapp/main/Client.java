@@ -3,6 +3,7 @@ package toontownapp.main;
 //import toontownapp.ToontownApp;
 import toontownapp.cogbuilder.*;
 import toontownapp.cogfacilities.*;
+import toontownapp.cogsuits.CogSuitFacade;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -116,23 +117,8 @@ public class Client extends JFrame{
     }//callbuildCog()
 
     public void findCogSuit(){
-
-        CogFacility_IF cogFacility_if = null;
-
-        switch (cog.getCogtype()) {
-            case BOSSBOT: cogFacility_if = new BossbotGolfCourses();
-                break;
-            case LAWBOT: cogFacility_if = new LawbotDAOffices();
-                break;
-            case CASHBOT: cogFacility_if = new CashbotMint();
-                break;
-            case SELLBOT: cogFacility_if = new SellbotFactory();
-                break;
-            default: System.out.println("Error: invalid choice; ending program");
-                System.exit(0);
-                break;
-        }
-        systemOut.append("\n\n"+cogFacility_if.returnStats(cog)+"\n");
+        CogSuitFacade facade = new CogSuitFacade();
+        systemOut.append(facade.findCogSuit(cog));
     }//findCogSuit()
 
     /////////////////////////////////////////////////////////////////////
