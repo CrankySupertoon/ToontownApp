@@ -1,10 +1,7 @@
 package toontownapp.GUI;
 
 //import toontownapp.ToontownApp;
-import toontownapp.cogbuilder.Cog;
-import toontownapp.cogbuilder.CogBuilder;
-import toontownapp.cogbuilder.CogName;
-import toontownapp.cogbuilder.CogType;
+import toontownapp.cogbuilder.*;
 import toontownapp.cogfacilities.*;
 
 import javax.swing.*;
@@ -27,8 +24,7 @@ public class Tester extends JFrame{
     private CogName cogname;
     private CogType cogtype;
     private int coglvl;
-    private Cog cog;
-    private ArrayList<Integer> numsNeeded = new ArrayList<Integer>();
+    private CogIF cog;
 
     public static void main(String[]args){
         Tester test = new Tester();
@@ -62,8 +58,6 @@ public class Tester extends JFrame{
         menu();
     }
 
-    int choice;
-
     private void menu() {
         outputArea.setText("");
         outputArea.append("1 - Bossbot\n");
@@ -73,7 +67,7 @@ public class Tester extends JFrame{
         outputArea.append("5 - Exit\n");
         outputArea.append("Enter input: ");
         outputArea.setLineWrap(true);
-        choice = reading();
+        reading();
         outputArea.setText("");
 
         switch (input) {
@@ -103,27 +97,26 @@ public class Tester extends JFrame{
             case 5:
                 System.exit(0);
         }
-        this.buildCog();
+        this.callbuildCog();
         this.findCogSuit();
         outputArea.setText("");
         outputArea.append("Would you like to enter another cog?\n");
         outputArea.append("1 - Yes\n");
         outputArea.append("2 - No\n");
         outputArea.append("Enter a number: ");
-        if(reading()==1) {
-            systemOut.setText("");
-            menu();
+        switch(reading()) {
+            case 1:
+                systemOut.setText("");
+                menu();
+                break;
+            default:
+                System.exit(0);
         }
-        else
-            System.exit(0);
     }
 
-    public void buildCog(){
-        CogBuilder cogBuilder = new CogBuilder(cogtype);
-        cogBuilder.withCogLevel(coglvl);
-        cogBuilder.withCogName(cogname);
-
-        cog = new Cog(cogBuilder);
+    public void callbuildCog(){
+        CogDirector cogDirector = new CogDirector();
+        cog = cogDirector.buildCog(cogtype, coglvl, cogname);
     }
 
     public int reading(){
@@ -132,7 +125,7 @@ public class Tester extends JFrame{
         outputArea.setCaretPosition(outputArea.getDocument().getLength());
         while (!read) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -220,12 +213,9 @@ public class Tester extends JFrame{
         systemOut.append("Cog Selected: "+cogname);
 
         outputArea.setText("");
-        outputArea.append("\nWhat level are you? ");
+        outputArea.append("What level are you? ");
         coglvl = reading();
         systemOut.append("\nLevel: "+coglvl);
-
-        //BUILD COG WITH BUILDER HERE
-        //SEND COG COGFACILITY
     }
 
     public CogName findBossbot(int num){
@@ -303,8 +293,6 @@ public class Tester extends JFrame{
                 System.exit(0);
                 break;
         }
-        //numsNeeded = cogFacility_if.returnStats(cog);
         systemOut.append("\n\n"+cogFacility_if.returnStats(cog)+"\n");
-        //systemOut.append("\n\n"+cogFacility_if.printStats(numsNeeded)+"\n");
     }
 }
